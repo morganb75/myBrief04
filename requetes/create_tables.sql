@@ -52,22 +52,22 @@ CREATE TABLE publi_follower(
     user_id INT,
     CONSTRAINT fk_publi_follower
         FOREIGN KEY (follower_id)
-        REFERENCES dbuser(id),
+        REFERENCES publication(follower_id),
     CONSTRAINT fk_user_follower
         FOREIGN KEY(user_id)
         REFERENCES dbuser(id)
 );
 
-/*======= TABLE DE JOINTURE publi_user_like ===*/
+/*======= TABLE DE JOINTURE publi_user_like ====*/
 CREATE TABLE publi_user(
     liker_id INT,
     user_id INT,
     CONSTRAINT fk_publi_liker
         FOREIGN KEY (liker_id)
-        REFERENCES dbuser(id),
+        REFERENCES publication(liker_id),
     CONSTRAINT fk_user_liker
         FOREIGN KEY (user_id)
-        REFERENCES 
+        REFERENCES dbuser(id)
 );
 
 /*======= TABLE COMMENT  ===*/
@@ -96,6 +96,7 @@ CREATE TABLE comment(
 CREATE TABLE comment_user_owner(
     comment_id INT NOT NULL,
     dbuser_id INT NOT NULL,
-    CONSTRAINT fk_
-)
+    CONSTRAINT fk_user_owner
+        
+);
 /*======= TABLE DE JOINTURE comment_user_like ===*/
