@@ -1,5 +1,0 @@
-user,name,first_name,email,password
-(1,"dupont","jean","j.d@mail.com","hufieufege"),
-(2,"durand","jacques","jadu@mail.com","fergcjukyfr"),
-(3,"dujardin","kevin","kd@mail.com","gdrftktjjv"),
-(4,"picot","elisa","ep@mail.com","vehrrbjfcrthcv")

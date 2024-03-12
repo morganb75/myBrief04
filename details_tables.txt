@@ -1,0 +1,44 @@
+ id |                                content                                 |        date         | owner_id | publication_id 
+----+------------------------------------------------------------------------+---------------------+----------+----------------
+  1 | une publication  ayant pour id 1 par user id1                          | 2024-03-12 14:54:31 |        1 |               
+  2 | une publication  ayant pour id 2 par user id2                          | 2024-03-13 15:30:52 |        2 |               
+  3 | une publication  ayant pour id 3 par user id3                          | 2024-03-14 21:24:27 |        3 |               
+  4 | une publication  ayant pour id 4 par user id4                          | 2024-03-15 17:27:36 |        4 |               
+  5 | une publication  ayant pour id 5 par user id1                          | 2024-03-16 20:35:24 |        1 |               
+  6 | une publication  ayant pour id 6 par user id2                          | 2024-03-17 01:23:59 |        2 |               
+  7 | un commentaire de la publication id1  ayant pour id 7 par le user id1  | 2024-03-18 15:28:12 |        1 |              1
+  8 | un commentaire de la publication id1  ayant pour id 8 par le user id2  | 2024-03-19 17:00:23 |        2 |              1
+  9 | un commentaire de la publication id2  ayant pour id 9 par le user id3  | 2024-03-19 17:00:23 |        3 |              2
+ 10 | un commentaire de la publication id2  ayant pour id 10 par le user id4 | 2024-03-19 17:00:23 |        4 |              2
+(10 lignes)
+
+   user   
+----------
+ postgres
+(1 ligne)
+
+ id | name  
+----+-------
+  1 | user
+  2 | admin
+(2 lignes)
+
+ user_id | liked_id 
+---------+----------
+       2 |        1
+       3 |        1
+       4 |        1
+       3 |        4
+(4 lignes)
+
+ role_id | user_id 
+---------+---------
+(0 ligne)
+
+ user_id | followed_id 
+---------+-------------
+       1 |           2
+       3 |           2
+       3 |           4
+(3 lignes)
+
