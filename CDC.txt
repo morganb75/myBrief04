@@ -1,0 +1,53 @@
+CDC:
+
+- un user doit creer un compte   	=====> requete sur les infos profile user x
+					=====> requete d'insertion en base d'un user x
+
+- un user peut faire une publication
+- un user like des publications
+- un user peut suivre un autre user	
+	1. possibilité de notification des posts du user suivi
+	2. le user suivi est notifié du geste d'un follower et peut desactiver les notifications
+					
+					======> requete de creation de nouveau post x
+					======> requete affichage parametre user ainsi que modification user x
+- un user peut liker un post
+- un user peut commenter un post
+- un user peut repondre à un commentaire sur un post
+					======> requete pour afficher un post et son nombre de like
+					======> requete pour recuperer tous les commentaires d'un post
+
+- fonctionnalités avancées:
+	- systeme de recherche:
+		1. recherche par mots clé sur les users
+		2. recherche par mots clé sur les publications
+		3. filtrage des publications par date,auteur etc....
+
+	- creation de groupes avec un systeme de roles: gestion d'une page commune
+	  par plusieurs users qui auraient role de "SuperUser":
+		1. changer nom du groupe
+		2. changer visibilté du groupe (prive, public)
+		3. inviter des users
+		4. assigner un role (Admin, modo, editeur ou visiteur)
+
+
+
+BONUS:
+
+Analytics:
+
+	La durée moyenne des sessions utilisateurs.
+	Le nombre moyens de posts publié par utilisateurs.
+	Le nombre moyens de post visionné par un utilisateurs par session.
+	Le temps moyen passé a l'écriture d'un post.
+	Le nombre moyens de modification d'un post déjà publié.
+	Le temps moyens passé sur un fil, regroupé par type de fils d'actualités.
+
+	Logs des differentes modif effectuees(nom de compte, texte de post etc...)
+
+			=====> requetes associées
+	
+
+
+
+

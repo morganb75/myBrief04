@@ -2,17 +2,25 @@
 
 INSERT INTO "user"(name,first_name,email,password)
 VALUES
-('dupont','jean','j.d@mail.com','hufieufege'),
-('durand','jacques','jadu@mail.com','fergcjukyfr'),
-('dujardin','kevin','kd@mail.com','gdrftktjjv'),
-('picot','elisa','ep@mail.com','vehrrbjfcrthcv');
+('Desnoyer','Parfait','ParfaitDesnoyer@cuvox.de','pahvuG4h'),
+('Lapointe','Tilly','TillyLapointe@fleckens.hu','eigaaGhae6'),
+('Perrault','Ninette','NinettePerrault@superrito.com','oQuooph7coh'),
+('Arnoux','Mignonette','MignonetteArnoux@dayrep.com','aT9och8Ohw'),
+('Gour','Yseult','YseultGour@dayrep.com','WahTh2voh1'),
+('Salois','Marie','MarieSalois@superrito.com','aes3Aepu8W'),
+('de Chateaub','Caresse','CaressedeChateaub@gustr.com','Shiat2uPh'),
+('Beaulieu','Mercer','MercerBeaulieu@cuvox.de','jooriTha9fai'),
+('Barrière','Ganelon','GanelonBarriere@cuvox.de','ahfui9ba4B'),
+('Simard','Virginie','VirginieSimard@teleworm.us','urooLa3zah');
 
 /*===========  insert roles ======================*/
 INSERT INTO role(name) 
 VALUES
-('user'),
-('admin');INSERT INTO role (id, name)
-VALUES (id:integer, 'name:character varying');
+('admin'),
+('moderateur'),
+('editeur'),
+('visiteur');
+
 
 /*===========  insert publi/com ======================*/
 
