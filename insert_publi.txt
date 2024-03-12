@@ -1,0 +1,10 @@
+INSERT
+id,content,owner_id,date,#publication_id
+1,"""une publication  ayant pour id 1""",1,,NULL
+2,"""une publication  ayant pour id 2""",2,,NULL
+3,"""une publication  ayant pour id 3""",3,,NULL
+4,"""une publication  ayant pour id 4""",4,,NULL
+5,"""une publication  ayant pour id 5""",1,,NULL
+6,"""une publication  ayant pour id 6""",2,,NULL
+7,"""un commentaire de la publication id1  ayant pour id 7""",1,,1
+8,"""un commentaire de la publication id1  ayant pour id 8""",2,,1
