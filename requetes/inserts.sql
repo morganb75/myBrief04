@@ -82,9 +82,14 @@ VALUES
 /*===========  insert publi_user_like ======================*/
 INSERT INTO publi_user_like(user_id,liked_id)
 VALUES
-(2,1),(3,1),(4,1),(3,4);
+(2,1),
+(3,1),
+(4,1),
+(3,4);
 
 /*===========  insert user_follow ======================*/
 INSERT INTO user_follow(user_id,followed_id) 
 VALUES
-(1,2),(3,2),(3,4);
+(1,2),
+(3,2),
+(3,4);
