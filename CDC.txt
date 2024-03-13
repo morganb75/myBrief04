@@ -14,8 +14,8 @@ CDC:
 - un user peut liker un post
 - un user peut commenter un post
 - un user peut repondre à un commentaire sur un post
-					======> requete pour afficher un post et son nombre de like
-					======> requete pour recuperer tous les commentaires d'un post
+					======> requete pour afficher un post et son nombre de like x
+					======> requete pour recuperer tous les commentaires d'un post x
 
 - fonctionnalités avancées:
 	- systeme de recherche:

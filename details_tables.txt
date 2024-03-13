@@ -1,44 +1,79 @@
- id |                                content                                 |        date         | owner_id | publication_id 
-----+------------------------------------------------------------------------+---------------------+----------+----------------
-  1 | une publication  ayant pour id 1 par user id1                          | 2024-03-12 14:54:31 |        1 |               
-  2 | une publication  ayant pour id 2 par user id2                          | 2024-03-13 15:30:52 |        2 |               
-  3 | une publication  ayant pour id 3 par user id3                          | 2024-03-14 21:24:27 |        3 |               
-  4 | une publication  ayant pour id 4 par user id4                          | 2024-03-15 17:27:36 |        4 |               
-  5 | une publication  ayant pour id 5 par user id1                          | 2024-03-16 20:35:24 |        1 |               
-  6 | une publication  ayant pour id 6 par user id2                          | 2024-03-17 01:23:59 |        2 |               
-  7 | un commentaire de la publication id1  ayant pour id 7 par le user id1  | 2024-03-18 15:28:12 |        1 |              1
-  8 | un commentaire de la publication id1  ayant pour id 8 par le user id2  | 2024-03-19 17:00:23 |        2 |              1
-  9 | un commentaire de la publication id2  ayant pour id 9 par le user id3  | 2024-03-19 17:00:23 |        3 |              2
- 10 | un commentaire de la publication id2  ayant pour id 10 par le user id4 | 2024-03-19 17:00:23 |        4 |              2
-(10 lignes)
+ id | content | owner_id | date | publication_id | group_id 
+----+---------+----------+------+----------------+----------
+(0 ligne)
 
    user   
 ----------
  postgres
 (1 ligne)
 
- id | name  
-----+-------
-  1 | user
-  2 | admin
-(2 lignes)
+ id |    name    
+----+------------
+  1 | admin
+  2 | moderateur
+  3 | membre
+(3 lignes)
 
- user_id | liked_id 
----------+----------
-       2 |        1
-       3 |        1
-       4 |        1
-       3 |        4
+ id |    name     |        date         | owner_id 
+----+-------------+---------------------+----------
+  1 | musique     | 2024-03-12 02:32:14 |        5
+  2 | cinema      | 2024-03-12 03:32:14 |        1
+  3 | sortie      | 2024-03-12 04:32:14 |        3
+  4 | covoiturage | 2024-03-12 05:32:14 |        3
 (4 lignes)
 
- role_id | user_id 
----------+---------
-(0 ligne)
+   user   
+----------
+ postgres
+(1 ligne)
 
- user_id | followed_id 
----------+-------------
-       1 |           2
-       3 |           2
-       3 |           4
-(3 lignes)
+ id |    name     | first_name |             email             |   password   
+----+-------------+------------+-------------------------------+--------------
+  1 | Desnoyer    | Parfait    | ParfaitDesnoyer@cuvox.de      | pahvuG4h
+  2 | Lapointe    | Tilly      | TillyLapointe@fleckens.hu     | eigaaGhae6
+  3 | Perrault    | Ninette    | NinettePerrault@superrito.com | oQuooph7coh
+  4 | Arnoux      | Mignonette | MignonetteArnoux@dayrep.com   | aT9och8Ohw
+  5 | Gour        | Yseult     | YseultGour@dayrep.com         | WahTh2voh1
+  6 | Salois      | Marie      | MarieSalois@superrito.com     | aes3Aepu8W
+  7 | de Chateaub | Caresse    | CaressedeChateaub@gustr.com   | Shiat2uPh
+  8 | Beaulieu    | Mercer     | MercerBeaulieu@cuvox.de       | jooriTha9fai
+  9 | Barrière    | Ganelon    | GanelonBarriere@cuvox.de      | ahfui9ba4B
+ 10 | Simard      | Virginie   | VirginieSimard@teleworm.us    | urooLa3zah
+(10 lignes)
+
+               Liste des relations
+ Schéma |       Nom       | Type  | Propriétaire 
+--------+-----------------+-------+--------------
+ public | group           | table | postgres
+ public | publi_user_like | table | postgres
+ public | publication     | table | postgres
+ public | role            | table | postgres
+ public | user            | table | postgres
+ public | user_follow     | table | postgres
+ public | user_group      | table | postgres
+(7 lignes)
+
+               Liste des relations
+ Schéma |       Nom       | Type  | Propriétaire 
+--------+-----------------+-------+--------------
+ public | group           | table | postgres
+ public | publi_user_like | table | postgres
+ public | publication     | table | postgres
+ public | role            | table | postgres
+ public | user            | table | postgres
+ public | user_follow     | table | postgres
+ public | user_group      | table | postgres
+(7 lignes)
+
+               Liste des relations
+ Schéma |       Nom       | Type  | Propriétaire 
+--------+-----------------+-------+--------------
+ public | group           | table | postgres
+ public | publi_user_like | table | postgres
+ public | publication     | table | postgres
+ public | role            | table | postgres
+ public | user            | table | postgres
+ public | user_follow     | table | postgres
+ public | user_group      | table | postgres
+(7 lignes)
 

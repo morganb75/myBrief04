@@ -1,8 +1,8 @@
 /*==== DROP TOTALE SI NECESSAIRE ====*/
 /*
- DROP TABLE comment_user_like,
- publi_follower,publi_liker,role_user,comment,
- publication,user,role; 
+ DROP TABLE IF EXISTS publi_user_like,
+ user_group,user_follow,
+ publication,"user",role,"group"; 
 */
 /*=============== TABLE USER ==============*/
 CREATE TABLE "user"(
@@ -19,27 +19,22 @@ CREATE TABLE role(
     name VARCHAR(255) NOT NULL
 );
 
-/*======= TABLE DE JOINTURE ROLE_USER ===*/
-CREATE TABLE role_user(
-    role_id INT NOT NULL,
-    user_id INT NOT NULL,
-    CONSTRAINT fk_role
-        FOREIGN KEY(role_id)
-        REFERENCES role(id)
-        ON DELETE CASCADE,
-    CONSTRAINT fk_user
-        FOREIGN KEY (user_id)
-        REFERENCES "user"(id)
-        ON DELETE CASCADE
+/*======= TABLE GROUP ===*/
+CREATE TABLE "group"(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    owner_id INT NOT NULL
 );
 
 /*======= TABLE PUBLICATION  ===*/
 CREATE TABLE publication(
     id SERIAL PRIMARY KEY,
     content VARCHAR(255) NOT NULL,
-    date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     owner_id INT NOT NULL REFERENCES "user"(id) ON DELETE CASCADE,
-    publication_id INT REFERENCES publication(id) ON DELETE SET NULL
+    date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    publication_id INT REFERENCES publication(id) ON DELETE SET NULL,
+    group_id INT REFERENCES "group"(id) ON DELETE SET NULL
 );
 
 /*======= TABLE DE JOINTURE publi_user_like ====*/
@@ -58,10 +53,30 @@ CREATE TABLE publi_user_like(
 CREATE TABLE user_follow(
     user_id INT,
     followed_id INT,
+    notification BOOLEAN NOT NULL DEFAULT true,
     CONSTRAINT fk_user
         FOREIGN KEY(user_id)
         REFERENCES "user"(id),
     CONSTRAINT fk_followed
         FOREIGN KEY (followed_id)
         REFERENCES "user"(id)
+);
+
+/*======= TABLE DE JOINTURE user_group ===*/
+CREATE TABLE user_group(
+    group_id INT NOT NULL,
+    user_id INT NOT NULL,
+    role_id INT NOT NULL,
+    CONSTRAINT fk_group
+        FOREIGN KEY (group_id)
+        REFERENCES "group"(id)
+        ON DELETE CASCADE,
+    CONSTRAINT fk_user
+        FOREIGN KEY (user_id)
+        REFERENCES "user"(id)
+        ON DELETE CASCADE,
+    CONSTRAINT fk_role
+        FOREIGN KEY (role_id)
+        REFERENCES role(id)
+        ON DELETE CASCADE
 );
