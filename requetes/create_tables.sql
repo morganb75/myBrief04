@@ -2,7 +2,7 @@
 /*
  DROP TABLE IF EXISTS publi_user_like,
  user_group,user_follow,
- publication,"user",role,"group"; 
+ publication,"user",role,"group",attachment; 
 */
 /*=============== TABLE USER ==============*/
 CREATE TABLE "user"(
@@ -25,6 +25,7 @@ CREATE TABLE "group"(
     name VARCHAR(255) NOT NULL,
     date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     owner_id INT NOT NULL
+    visibilty BOOLEAN NOT NULL DEFAULT TRUE
 );
 
 /*======= TABLE PUBLICATION  ===*/
@@ -35,6 +36,23 @@ CREATE TABLE publication(
     date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     publication_id INT REFERENCES publication(id) ON DELETE SET NULL,
     group_id INT REFERENCES "group"(id) ON DELETE SET NULL
+);
+
+/*======= TABLE ATTACHMENT  ===*/
+CREATE TABLE attachment(
+    id SERIAL PRIMARY KEY,
+    url VARCHAR(255),
+    url_img VARCHAR(255),
+    url_vid VARCHAR(255),
+    publication_id INT REFERENCES publication(id) ON DELETE CASCADE
+);
+
+/*======= TABLE SESSION  ===*/
+CREATE TABLE session(
+    id SERIAL PRIMARY KEY,
+    date_start TIMESTAMP NOT NULL,
+    date_end TIMESTAMP,
+    user_id INT REFERENCES "user"(id) ON DELETE CASCADE
 );
 
 /*======= TABLE DE JOINTURE publi_user_like ====*/

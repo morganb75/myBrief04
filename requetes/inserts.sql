@@ -66,6 +66,22 @@ VALUES
 ('un commentaire de publication',4,'2024-03-19 17:00:23',5,4),
 ('un commentaire de publication',9,'2024-03-19 17:00:23',8,2);
 
+/*=================  ATTACHMENTS ===================================*/
+INSERT INTO attachment(url,url_img,url_vid,publication_id)
+VALUES
+('url1',NULL,NULL,1),
+(NULL,'url2',NULL,3),
+(NULL,NULL,'url3',5);
+
+/*=================  SESSION ===================================*/
+INSERT INTO session(date_start,date_end,user_id)
+VALUES 
+('2024-03-01 08:00:00','2024-03-01 08:15:00',1),
+('2024-03-02 08:00:00','2024-03-02 08:30:00',1),
+('2024-03-03 08:00:00','2024-03-03 08:15:00',1),
+('2024-03-01 08:01:00','2024-03-01 08:15:00',5),
+('2024-03-02 09:00:00','2024-03-02 09:15:00',7);
+
 /*===========  insert user_group ======================*/
 
 INSERT INTO user_group(group_id,user_id,role_id)

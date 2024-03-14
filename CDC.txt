@@ -16,6 +16,7 @@ CDC:
 - un user peut repondre à un commentaire sur un post
 					======> requete pour afficher un post et son nombre de like x
 					======> requete pour recuperer tous les commentaires d'un post x
+					======> requete pour recuperer toutes les PJ d'un post x
 
 - fonctionnalités avancées:
 	- systeme de recherche:
@@ -36,7 +37,7 @@ BONUS:
 
 Analytics:
 
-	La durée moyenne des sessions utilisateurs.
+	La durée moyenne des sessions utilisateurs. x
 	Le nombre moyens de posts publié par utilisateurs.
 	Le nombre moyens de post visionné par un utilisateurs par session.
 	Le temps moyen passé a l'écriture d'un post.

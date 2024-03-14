@@ -56,17 +56,24 @@ SELECT p.publication_id AS idPubli, p.id AS idCommentaire,p.content AS Content
 FROM publication p
 WHERE p.publication_id =1;
 
+/*============ AFFICHAGE DES PJ D'UN POST  =================*/
+SELECT p.id AS idpubli,a.url AS fichier,a.url_img AS image,a.url_vid AS video
+FROM publication p
+INNER JOIN attachment a
+ON p.id = a.publication_id;
+--WHERE p.id = 1;
+
 /*=====================================================================*/
 /*========= RECHERCHE PAR MOT CLE DANS USER ET PUBLICATIONS ========*/
 /* le mot clef est le suivant dans la requete: '%motclef%' */
 
 SELECT u.name||' '||u.first_name AS User, u.email AS Mail
 FROM "user" u
-WHERE u.email LIKE'%cuvox%';
+WHERE u.email ILIKE '%cuvox%';
 
 SELECT p.id, p.content
 FROM publication p
-WHERE p.publication_id IS NULL AND p.content LIKE '%bla%';
+WHERE p.publication_id IS NULL AND p.content ILIKE '%bla%';
 
 /*========= FONCTIONS DE FILTRAGE PUBLIS PAR Date, Auteur, Popularité...  ========*/
 
@@ -93,7 +100,7 @@ FROM publi_user_like pul
     INNER JOIN "user" u
     ON pul.user_id=u.id
 GROUP BY liked_id, p.content, p.date
-ORDER BY COUNT(pul.user_id) DESC;
+ORDER BY "like" DESC;
 
 
 /*========= GROUPES ========*/
@@ -125,7 +132,14 @@ FROM user_group ug
     ON u.id = ug.user_id
 WHERE g.name = 'covoiturage' OR g.id;
 
-
+/*======================= ANALYTICS ============================*/
+/*===== DUREE MOYENNE DE SESSION UTILISATEUR ====*/
+SELECT u.name||' '||u.first_name AS "user", AVG(s.date_end - s.date_start)
+FROM "user" u
+    INNER JOIN session s
+    ON s.user_id = u.id
+WHERE u.id = 1
+GROUP BY "user";
 
 
 
