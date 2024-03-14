@@ -1,11 +1,3 @@
-/*=========== VIDAGE DE TOUTES LES TABLES ========*/
-/*DELETE FROM publi_user_like;
-DELETE FROM role_user;
-DELETE FROM user_follow;
-DELETE FROM publication;
-DELETE FROM "user";
-DELETE FROM role;*/
-
 /*===========  insert users ======================*/
 
 INSERT INTO "user"(name,first_name,email,password)
