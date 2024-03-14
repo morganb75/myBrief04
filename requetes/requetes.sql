@@ -88,10 +88,10 @@ p.date,
 COUNT(pul.user_id) AS like,
 STRING_AGG(u.name, ', ') AS likers
 FROM publi_user_like pul
-INNER JOIN publication p
-ON pul.liked_id = p.id
-INNER JOIN "user" u
-ON pul.user_id=u.id
+    INNER JOIN publication p
+    ON pul.liked_id = p.id
+    INNER JOIN "user" u
+    ON pul.user_id=u.id
 GROUP BY liked_id, p.content, p.date
 ORDER BY COUNT(pul.user_id) DESC;
 
